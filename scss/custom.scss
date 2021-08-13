@@ -1,0 +1,29 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+$input-group-addon-color: rgb(255, 255, 255);
+input[type=radio]{
+    transform:scale(1.45);
+  }
+input[type=checkbox] {
+    transform:scale(1.6);
+}
+
+$primary: rgb(216, 153, 35);
+$form-check-input-bg:  #212529;
+$form-check-input-border: 2px solid rgb(255, 255, 255);
+
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+);
