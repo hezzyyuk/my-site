@@ -12,9 +12,19 @@
   </head>
   
   <body style="height: 5000px;">
-    <div id="preloder">
-      <div class="loader"></div>
-  </div>
+    <div class="preloader">
+      <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+      </div>
+    </div>
   <!-- Menu-->
        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid">
@@ -38,7 +48,7 @@
             </li>
             <div class="d-flex">
             <button class="btn btn-lg btn-outline-success" data-bs-toggle="modal" data-bs-target="#ModalSignIn">Sign in</button>
-          </div>
+            </div>
           </ul>
         </div>
       </div>
@@ -122,7 +132,11 @@
               <div class="carousel-item active">
                 <img src="img\pexels-photo-3147493.jpeg" class="d-block w-100 set-bg">
                 <div class="carousel-caption p-2 d-md-block">
-                  <h1><a href="#" class="primary-btn text-light">Order</a></h1>
+                   <h1 class="ml10">
+                    <span class="text-wrapper">
+                      <span class="letters">Order now</span>
+                    </span>
+                  </h1>
                 </div>
               </div>
               <div class="carousel-item">
@@ -216,9 +230,37 @@
           </div>
           <!--Grid-->
         </main>
+     <!--Скрипт для загрузки страницы-->
+     <script>
+      window.addEventListener('load', () => { /* Страница загружена, включая все ресурсы */
+      const preloader = document.querySelector('.preloader') /* находим блок Preloader */
+      preloader.classList.add('preloader_hidden') /* добавляем ему класс для скрытия */
+      })
+     </script> 
+     <!--Скрипт для загрузки страницы-->
 
-    
-
+    <!--Скрипт для бyковок в слайдере-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+      // Wrap every letter in a span
+      var textWrapper = document.querySelector('.ml10 .letters');
+      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+  
+      anime.timeline({loop: true})
+      .add({
+      targets: '.ml10 .letter',
+      rotateY: [-90, 0],
+      duration: 1300,
+      delay: (el, i) => 45 * i
+      }).add({
+      targets: '.ml10',
+      opacity: 0,
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 1000
+      });
+    </script>
+<!--Скрипт для бyковок в слайдере-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
   </body>
